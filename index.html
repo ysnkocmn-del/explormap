@@ -3,24 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explormap · Explormap</title>
+<title>Explormap: Gezi Planlayıcı</title>
+<meta name="title-tr" content="Explormap: Gezi Planlayıcı"><meta name="title-en" content="Explormap: Trip Planner">
+<meta name="description" content="177 ülkede gün gün gezi planı, hazır rotalar, gezi asistanı ve gezi pasaportu."><meta name="description-tr" content="177 ülkede gün gün gezi planı, hazır rotalar, gezi asistanı ve gezi pasaportu."><meta name="description-en" content="Day-by-day trip plans, ready-made routes, a trip assistant and a travel passport for 177 countries.">
+<meta name="theme-color" content="#0B2E3D">
+<meta property="og:title" content="Explormap: Trip Planner"><meta property="og:description" content="Day-by-day trip plans, ready-made routes, a trip assistant and a travel passport for 177 countries."><meta property="og:image" content="img/paylasim-en.jpg"><meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon-64.png"><link rel="apple-touch-icon" href="img/simge-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#f6f4ef; --card:#fff; --text:#16202a; --muted:#5b6670; --accent:#0f5c6e; --line:#e3ded4; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0f171e; --card:#17222c; --text:#eef2f5; --muted:#a3afba; --accent:#7cc7d6; --line:#26333f; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
-  nav { display:flex; flex-wrap:wrap; gap:8px 16px; margin-bottom:24px; }
-  nav a, a { color:var(--accent); }
-  h1 { font-size:28px; line-height:1.25; margin:8px 0; }
-  h2 { font-size:20px; margin:0 0 8px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:12px 0; }
-  .muted { color:var(--muted); font-size:14px; }
-  .lang { margin-top:48px; padding-top:24px; border-top:2px solid var(--line); }
-  p { margin:6px 0; }
-  details { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 16px; margin:8px 0; }
-  summary { cursor:pointer; font-weight:600; }
+:root{--navy:#0B2E3D;--navy2:#0F5C73;--amber:#F2A93B;--amber-soft:#FDF1DF;--bg:#F5F6F8;--card:#fff;--text:#101820;--body:#3A4450;--muted:#5B6670;--line:#E3E6EA;--radius:20px}
+@media (prefers-color-scheme:dark){:root{--bg:#0C1419;--card:#152129;--text:#EEF2F5;--body:#C9D2DA;--muted:#93A1AD;--line:#24323D;--amber-soft:#2A2213}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2)}@media (prefers-color-scheme:dark){a{color:#7CC7D6}}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em;line-height:1.15;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+body[data-lang=tr] [data-l=en],body[data-lang=en] [data-l=tr]{display:none!important}
+header.top{position:sticky;top:0;z-index:10;background:rgba(11,46,61,.92);backdrop-filter:saturate(1.4) blur(10px)}
+header.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600}
+.brand .mark{width:26px;height:34px}.brand b{color:var(--amber);font-weight:600}
+nav.links{display:flex;gap:18px;margin-left:auto;align-items:center}
+nav.links a{color:#D6E4EA;text-decoration:none;font-size:15px}nav.links a:hover{color:#fff}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:#D6E4EA;font:600 13px/1 inherit;padding:8px 12px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--amber);color:var(--navy)}
+@media (max-width:760px){nav.links a.opt{display:none}}
+.hero{background:radial-gradient(1200px 500px at 85% 0%,rgba(242,169,59,.18),transparent 60%),linear-gradient(180deg,#0B2E3D,#0E3A4C);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:0}
+.hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:600}.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:#C9DCE3;max-width:34em;margin:18px 0 26px}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:14px;padding:10px 18px 10px 14px;border:1px solid rgba(255,255,255,.25);min-width:180px}
+.store svg{width:24px;height:24px;flex:none}.store small{display:block;font-size:11px;opacity:.8;line-height:1.2}.store strong{display:block;font-size:17px;line-height:1.2}
+.store.soon{opacity:.85;cursor:default}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#E8F1F4;border-radius:999px;padding:6px 14px;font-size:14px}
+.hero .wrap{padding-bottom:56px}
+.phones{display:flex;gap:18px;justify-content:center;align-items:flex-start}
+.phone{width:220px;border-radius:30px;padding:6px;background:#06161D;box-shadow:0 24px 50px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08)}
+.phone img{display:block;width:100%;height:auto;border-radius:24px}
+.phone.a{margin-top:44px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:8px;padding-top:40px;padding-bottom:40px}.pills{margin-bottom:24px}.phone{width:46%;max-width:210px}.phone.a{margin-top:28px}}
+@media (max-width:480px){.badges .store{min-width:0;flex:1 1 150px;padding:9px 12px}.store strong{font-size:15px}}
+section.block{padding:72px 0}section.block h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:10px}
+.kicker{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy2);margin-bottom:10px}
+@media (prefers-color-scheme:dark){.kicker{color:#7CC7D6}}
+.sub{color:var(--muted);font-size:18px;max-width:40em;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .ico{font-size:28px;line-height:1;margin-bottom:12px}.card h3{font-size:20px;margin-bottom:6px}.card p{margin:0;color:var(--body)}
+.shots{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding:4px 2px 8px}
+@media (max-width:860px){.shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}}
+.shots figure{margin:0;scroll-snap-align:start}@media (max-width:860px){.shots figure{flex:none;width:190px}}
+.shots img{width:100%;height:auto;display:block;border-radius:22px;padding:5px;background:#06161D;box-shadow:0 14px 30px rgba(11,46,61,.18)}
+.shots figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.steps .card{position:relative;padding-top:56px}.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:30px;height:30px;border-radius:50%;background:var(--amber);color:var(--navy);font-weight:800;display:grid;place-items:center}
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.plans{grid-template-columns:1fr}}
+.plan h3{font-size:22px}.plan .tag{display:inline-block;background:var(--amber-soft);color:#7A4B00;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;margin-bottom:10px}
+@media (prefers-color-scheme:dark){.plan .tag{color:#F7BE62}}
+.plan ul{margin:12px 0 0;padding-left:18px;color:var(--body)}.plan.hi{border:2px solid var(--amber)}
+.fine{color:var(--muted);font-size:14px;margin-top:16px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:10px 0}summary{cursor:pointer;font-weight:700}details p{color:var(--body);margin:10px 0 0}
+.cta{background:linear-gradient(135deg,#0B2E3D,#0F5C73);color:#fff;border-radius:28px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.cta h2{color:#fff}.cta p{color:#C9DCE3;margin:8px 0 0}
+footer.bottom{background:#081F29;color:#9FB4BE;padding:40px 0;margin-top:72px;font-size:14px}
+footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}footer.bottom a{color:#D6E4EA;text-decoration:none;margin-right:16px}
+.doc{max-width:780px;margin:0 auto;padding:40px 20px 0}.doc h1{font-size:clamp(30px,4vw,42px);margin:6px 0 12px}.doc .muted{color:var(--muted);font-size:14px}
+.doc section.card{margin:14px 0}.doc section.card h2{font-size:20px;margin-bottom:8px}.doc section.card p{margin:6px 0;color:var(--body)}
 </style>
 </head>
-<body><main><h1>Explormap</h1><nav><a href="privacy.html#tr">Gizlilik</a><a href="terms.html#tr">Kullanım koşulları</a><a href="licenses.html#tr">Lisanslar</a><a href="support.html#tr">Destek</a></nav><p class="muted">English: <a href="privacy.html#en">Privacy</a> · <a href="terms.html#en">Terms</a> · <a href="licenses.html#en">Licences</a> · <a href="support.html#en">Support</a></p></main></body>
+<body data-lang="tr">
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a>
+<nav class="links">
+<a class="opt" href="#ozellikler"><span data-l="tr">Özellikler</span><span data-l="en">Features</span></a><a class="opt" href="#paketler"><span data-l="tr">Paketler</span><span data-l="en">Plans</span></a>
+<a class="opt" href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
+<span class="lang" role="group" aria-label="Dil / Language"><button type="button" data-set="tr" aria-pressed="false">TR</button><button type="button" data-set="en" aria-pressed="false">EN</button></span>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <h1><span data-l="tr">Gezini planla,<br><em>haritanı renklendir.</em></span><span data-l="en">Plan your trip,<br><em>colour in your map.</em></span></h1>
+    <p class="lead"><span data-l="tr">177 ülkede gün gün gezi planı, hazır rotalar, gezi asistanı ve gezdiğin her ülkeyi damgalayan bir gezi pasaportu. Hepsi tek uygulamada.</span><span data-l="en">Day-by-day trip plans, ready-made routes, a trip assistant and a travel passport that stamps every country you visit, across 177 countries. All in one app.</span></p>
+    <div class="badges"><span class="store soon" aria-disabled="true"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small><span data-l="tr">Yakında</span><span data-l="en">Coming soon</span></small><strong>App Store</strong></span></span><span class="store soon" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.5l10.6 10.5L3.6 22.5c-.4-.2-.6-.6-.6-1.1V2.6c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="M17.7 15.5l-3.5-3.5 3.5-3.5 4 2.3c1 .6 1 1.9 0 2.5z"/><path fill="#EA4335" d="M14.2 12l3.5 3.5L5.3 22.6c-.5.3-1.1.3-1.7-.1z"/><path fill="#4285F4" d="M3.6 1.5c.6-.4 1.2-.4 1.7-.1l12.4 7.1-3.5 3.5z"/></svg><span><small><span data-l="tr">Yakında</span><span data-l="en">Coming soon</span></small><strong>Google Play</strong></span></span></div>
+    <div class="pills"><span class="pill"><span data-l="tr">177 ülke</span><span data-l="en">177 countries</span></span><span class="pill"><span data-l="tr">Türkçe ve İngilizce</span><span data-l="en">Turkish and English</span></span><span class="pill"><span data-l="tr">Hesap isteğe bağlı</span><span data-l="en">Account optional</span></span></div>
+  </div>
+  <div class="phones">
+    <div class="phone a"><img data-l="tr" src="img/tr-ekran-4-gezi-pasaportu.jpg" alt="Gezi pasaportu" width="540" height="1170"><img data-l="en" src="img/en-ekran-4-gezi-pasaportu.jpg" alt="Travel passport" width="540" height="1170"></div>
+    <div class="phone b"><img data-l="tr" src="img/tr-ekran-1-gun-plani.jpg" alt="Gün planı" width="540" height="1170"><img data-l="en" src="img/en-ekran-1-gun-plani.jpg" alt="Day plan" width="540" height="1170"></div>
+  </div>
+</div></section>
+
+<section class="block" id="ozellikler"><div class="wrap">
+  <span class="kicker"><span data-l="tr">Özellikler</span><span data-l="en">Features</span></span>
+  <h2><span data-l="tr">Gezinin her anı için</span><span data-l="en">For every moment of your trip</span></h2>
+  <p class="sub"><span data-l="tr">Plan yapmaktan gezerken soru sormaya, gezdiklerini biriktirmeye kadar.</span><span data-l="en">From planning, to quick questions on the go, to collecting the places you have been.</span></p>
+  <div class="grid"><div class="card"><div class="ico">🗓️</div><h3><span data-l="tr">Gün gün gezi planı</span><span data-l="en">Day-by-day plans</span></h3><p><span data-l="tr">Şehrini, gün sayını ve ilgi alanlarını seç; saatli, haritalı planın saniyeler içinde hazır.</span><span data-l="en">Pick a city, number of days and interests; a timed plan with maps is ready in seconds.</span></p></div><div class="card"><div class="ico">🧭</div><h3><span data-l="tr">Hazır rotalar</span><span data-l="en">Ready-made routes</span></h3><p><span data-l="tr">Editörün seçtiği rotalar, günübirlik kaçamaklar ve ücretsiz gezilecek yerler.</span><span data-l="en">Editor's picks, day trips and free places to visit.</span></p></div><div class="card"><div class="ico">🛂</div><h3><span data-l="tr">Gezi pasaportu</span><span data-l="en">Travel passport</span></h3><p><span data-l="tr">Gittiğin her ülke kendi sınır şekliyle damgalanır; dünya haritan gezdikçe renklenir.</span><span data-l="en">Every country you visit gets a stamp in its own shape; your world map fills in as you travel.</span></p></div><div class="card"><div class="ico">✨</div><h3><span data-l="tr">Gezi asistanı</span><span data-l="en">Trip assistant</span></h3><p><span data-l="tr">Açılış saatleri, biletler, yöresel lezzetler, hava durumu ve yakındaki yerler: sor, cevaplasın.</span><span data-l="en">Opening hours, tickets, local food, weather and what's nearby: just ask.</span></p></div><div class="card"><div class="ico">🌦️</div><h3><span data-l="tr">Hava tahminine göre plan</span><span data-l="en">Weather-aware plans</span></h3><p><span data-l="tr">Yağmurlu günlerde açık hava yerlerini daha kuru bir güne almayı önerir.</span><span data-l="en">On rainy days it suggests moving outdoor places to a drier day.</span></p></div><div class="card"><div class="ico">💸</div><h3><span data-l="tr">Harcamalar ve internetsiz kullanım</span><span data-l="en">Expenses and offline use</span></h3><p><span data-l="tr">Ortak bütçeyi takip et; planını ve fotoğrafları internetsiz kullanım için indir.</span><span data-l="en">Track a shared budget; download your plan and photos for offline use.</span></p></div></div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <span class="kicker"><span data-l="tr">Ekranlar</span><span data-l="en">Screens</span></span>
+  <h2><span data-l="tr">Uygulamaya göz at</span><span data-l="en">Take a look inside</span></h2>
+  <p class="sub"><span data-l="tr">Gerçek uygulama ekranları.</span><span data-l="en">Real screens from the app.</span></p>
+  <div class="shots" data-l="tr"><figure><img src="img/tr-ekran-1-gun-plani.jpg" alt="Gün planı ve harita" loading="lazy" width="540" height="1170"><figcaption>Gün planı ve harita</figcaption></figure><figure><img src="img/tr-ekran-2-kesfet.jpg" alt="Keşfet" loading="lazy" width="540" height="1170"><figcaption>Keşfet</figcaption></figure><figure><img src="img/tr-ekran-3-yer-detayi.jpg" alt="Yer sayfası" loading="lazy" width="540" height="1170"><figcaption>Yer sayfası</figcaption></figure><figure><img src="img/tr-ekran-4-gezi-pasaportu.jpg" alt="Gezi pasaportu" loading="lazy" width="540" height="1170"><figcaption>Gezi pasaportu</figcaption></figure><figure><img src="img/tr-ekran-6-asistan.jpg" alt="Gezi asistanı" loading="lazy" width="540" height="1170"><figcaption>Gezi asistanı</figcaption></figure></div><div class="shots" data-l="en"><figure><img src="img/en-ekran-1-gun-plani.jpg" alt="Day plan and map" loading="lazy" width="540" height="1170"><figcaption>Day plan and map</figcaption></figure><figure><img src="img/en-ekran-2-kesfet.jpg" alt="Explore" loading="lazy" width="540" height="1170"><figcaption>Explore</figcaption></figure><figure><img src="img/en-ekran-3-yer-detayi.jpg" alt="Place page" loading="lazy" width="540" height="1170"><figcaption>Place page</figcaption></figure><figure><img src="img/en-ekran-4-gezi-pasaportu.jpg" alt="Travel passport" loading="lazy" width="540" height="1170"><figcaption>Travel passport</figcaption></figure><figure><img src="img/en-ekran-6-asistan.jpg" alt="Trip assistant" loading="lazy" width="540" height="1170"><figcaption>Trip assistant</figcaption></figure></div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="kicker"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></span>
+  <h2><span data-l="tr">Üç adımda gezi planı</span><span data-l="en">A trip plan in three steps</span></h2>
+  <div class="steps" style="margin-top:28px">
+    <div class="card"><h3><span data-l="tr">Şehrini seç</span><span data-l="en">Pick your city</span></h3><p><span data-l="tr">177 ülkedeki yüzlerce şehir arasından gideceğin yeri seç; yakın şehirleri durak olarak ekle.</span><span data-l="en">Choose from hundreds of cities in 177 countries; add nearby cities as stops.</span></p></div>
+    <div class="card"><h3><span data-l="tr">Kendini anlat</span><span data-l="en">Tell us your style</span></h3><p><span data-l="tr">Kaç gün kalacağını, temponu ve ilgi alanlarını söyle.</span><span data-l="en">Tell us how many days you have, your pace and what you love.</span></p></div>
+    <div class="card"><h3><span data-l="tr">Planın hazır</span><span data-l="en">Your plan is ready</span></h3><p><span data-l="tr">Gün gün, saatli planını düzenle, paylaş, gezdikçe işaretle.</span><span data-l="en">Edit your timed, day-by-day plan, share it and tick places off as you go.</span></p></div>
+  </div>
+</div></section>
+
+<section class="block alt" id="paketler"><div class="wrap">
+  <span class="kicker"><span data-l="tr">Paketler</span><span data-l="en">Plans</span></span>
+  <h2><span data-l="tr">Ücretsiz başla</span><span data-l="en">Start for free</span></h2>
+  <p class="sub"><span data-l="tr">Hesap açmadan hemen kullanmaya başlayabilirsin. Daha uzun geziler için paketler:</span><span data-l="en">Start right away without an account. For longer trips:</span></p>
+  <div class="plans">
+    <div class="card plan"><span class="tag"><span data-l="tr">Ücretsiz</span><span data-l="en">Free</span></span><h3><span data-l="tr">Ücretsiz</span><span data-l="en">Free</span></h3><ul><li><span data-l="tr">3 günlük plan</span><span data-l="en">3-day plan</span></li><li><span data-l="tr">1 hazır rota</span><span data-l="en">1 ready-made route</span></li><li><span data-l="tr">Gezi pasaportu ve asistan</span><span data-l="en">Travel passport and assistant</span></li></ul></div>
+    <div class="card plan"><span class="tag"><span data-l="tr">Tek seferlik</span><span data-l="en">One-time</span></span><h3><span data-l="tr">Gezi bileti</span><span data-l="en">Trip pass</span></h3><ul><li><span data-l="tr">7 gün tam erişim</span><span data-l="en">Full access for 7 days</span></li><li><span data-l="tr">Tek ödeme, yenilenmez</span><span data-l="en">One payment, no renewal</span></li><li><span data-l="tr">Tek bir gezi için ideal</span><span data-l="en">Ideal for a single trip</span></li></ul></div>
+    <div class="card plan hi"><span class="tag"><span data-l="tr">En avantajlı</span><span data-l="en">Best value</span></span><h3><span data-l="tr">Aylık ve Yıllık</span><span data-l="en">Monthly and Yearly</span></h3><ul><li><span data-l="tr">Sınırsız gün planı</span><span data-l="en">Unlimited day plans</span></li><li><span data-l="tr">Tüm hazır rotalar</span><span data-l="en">All ready-made routes</span></li><li><span data-l="tr">İstediğin zaman iptal</span><span data-l="en">Cancel any time</span></li></ul></div>
+  </div>
+  <p class="fine"><span data-l="tr">Ödemeler App Store ya da Google Play üzerinden yapılır. Abonelikler, yenileme tarihinden en az 24 saat önce iptal edilmezse otomatik yenilenir. Güncel fiyatları uygulamada görebilirsin.</span><span data-l="en">Payments are made through the App Store or Google Play. Subscriptions renew automatically unless cancelled at least 24 hours before renewal. See current prices in the app.</span></p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="kicker"><span data-l="tr">Sık sorulanlar</span><span data-l="en">FAQ</span></span>
+  <h2><span data-l="tr">Merak edilenler</span><span data-l="en">Questions</span></h2>
+  <div style="margin-top:20px"><div data-l="tr"><details><summary>Planım nerede saklanıyor?</summary><p>Misafir olarak kullanıyorsan planın ve tercihlerin yalnızca bu telefonda saklanır; uygulamayı silersen kaybolur. E-posta, Apple ya da Google ile giriş yaparsan hesabına da kaydedilir (Google Firebase, Avrupa Birliği’ndeki veri merkezi) ve başka telefonda aynı hesapla girince geri gelir. Bir planı başkasına göndermek için Planım → Paylaş'ı kullanabilirsin.</p></details><details><summary>Gezi planı nasıl yapılır?</summary><p>Keşfet'ten hazır bir rota ekleyebilir, yer sayfalarından tek tek yer ekleyebilir ya da Asistan'a &quot;Mardin'e 3 gün, bütçem 10.000 TL&quot; gibi yazıp hazır plan isteyebilirsin.</p></details><details><summary>Saatleri ve sırayı nasıl değiştiririm?</summary><p>Planım'da yerin fotoğrafındaki kaleme ya da soldaki saate dokun. Başlangıç saatini, kalma süresini ve öğle molasını oradan ayarlarsın; sonraki yerler kendiliğinden kayar.</p></details><details><summary>Bilgiler güncel mi?</summary><p>Saat ve fiyatlar gezinin öncesinde değişebilir. Her yer sayfasının altında son kontrol tarihi yazar; gitmeden resmi kaynaktan doğrulamanı öneririz.</p></details><details><summary>İnternetsiz kullanabilir miyim?</summary><p>Yer bilgileri ve tarihçeler internetsiz açılır. Planım'daki &quot;İnternetsiz hazırla&quot; düğmesi fotoğrafları da indirir. Harita, hava durumu ve hesap eşitlemesi için internet gerekir.</p></details><details><summary>Paketimi nasıl iptal ederim ya da iade alırım?</summary><p>Satın almalar App Store ya da Google Play üzerinden yapılır; iptal ve iade de telefonundaki mağazanın abonelik / satın alma ayarlarından yapılır. Telefon değiştirdiysen paketini Profil ya da Paketler ekranındaki &quot;Satın alımı geri yükle&quot; ile geri açabilirsin.</p></details></div><div data-l="en"><details><summary>Where is my plan stored?</summary><p>As a guest, your plan and settings are stored only on this phone and are lost if you delete the app. If you sign in with email, Apple or Google, they are also saved to your account (Google Firebase, in a European Union data centre) and come back when you sign in on another phone. To send a plan to someone, use My plan → Share.</p></details><details><summary>How do I make a trip plan?</summary><p>Add a ready-made route from Explore, add places one by one from their pages, or ask the Assistant something like &quot;3 days in Mardin, budget 10,000 TL&quot;.</p></details><details><summary>How do I change times and order?</summary><p>In My plan, tap the pencil on a place's photo or the time on the left. Set the start time, time spent and lunch break there; the next places shift automatically.</p></details><details><summary>Is the information up to date?</summary><p>Hours and prices can change before your trip. Each place page shows when it was last checked; please confirm with official sources before you go.</p></details><details><summary>Can I use it offline?</summary><p>Place info and histories work offline. The &quot;Get offline-ready&quot; button in My plan also downloads photos. Maps, weather and account sync need internet.</p></details><details><summary>How do I cancel or get a refund?</summary><p>Purchases are made through the App Store or Google Play; cancellations and refunds are handled in your phone's store settings. If you changed phones, use &quot;Restore purchases&quot; on the Profile or Plans screen to unlock your plan again.</p></details></div></div>
+  <p class="fine"><span data-l="tr">Daha fazlası için <a href="support.html">Destek</a> sayfasına bak.</span><span data-l="en">More on the <a href="support.html">Support</a> page.</span></p>
+</div></section>
+
+<section class="wrap"><div class="cta">
+  <div><h2><span data-l="tr">Bir sonraki geziye hazır mısın?</span><span data-l="en">Ready for your next trip?</span></h2><p><span data-l="tr">Explormap ücretsiz; hemen indir, planını dakikalar içinde yap.</span><span data-l="en">Explormap is free to download; make your plan in minutes.</span></p></div>
+  <div class="badges" style="margin:0"><span class="store soon" aria-disabled="true"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small><span data-l="tr">Yakında</span><span data-l="en">Coming soon</span></small><strong>App Store</strong></span></span><span class="store soon" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.5l10.6 10.5L3.6 22.5c-.4-.2-.6-.6-.6-1.1V2.6c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="M17.7 15.5l-3.5-3.5 3.5-3.5 4 2.3c1 .6 1 1.9 0 2.5z"/><path fill="#EA4335" d="M14.2 12l3.5 3.5L5.3 22.6c-.5.3-1.1.3-1.7-.1z"/><path fill="#4285F4" d="M3.6 1.5c.6-.4 1.2-.4 1.7-.1l12.4 7.1-3.5 3.5z"/></svg><span><small><span data-l="tr">Yakında</span><span data-l="en">Coming soon</span></small><strong>Google Play</strong></span></span></div>
+</div></section>
+
+<footer class="bottom"><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a><p style="margin:10px 0 0">© 2026 Explormap · <a href="mailto:info@explormap.app">info@explormap.app</a></p></div>
+<div><a href="privacy.html"><span data-l="tr">Gizlilik</span><span data-l="en">Privacy</span></a><a href="terms.html"><span data-l="tr">Kullanım koşulları</span><span data-l="en">Terms of use</span></a><a href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a><a href="support.html#hesap-silme"><span data-l="tr">Hesap silme</span><span data-l="en">Delete account</span></a><a href="licenses.html"><span data-l="tr">Lisanslar</span><span data-l="en">Licences</span></a></div>
+</div></footer>
+<script>
+(function(){
+  var b=document.body, q=new URLSearchParams(location.search).get('lang'), h=(location.hash||'').slice(1), s=null;
+  try{s=localStorage.getItem('lang')}catch(e){}
+  var pick=function(x){return x==='tr'||x==='en'?x:null};
+  var hashLang = pick(h) || (h==='hesap-silme'?'tr':h==='delete-account'?'en':null);
+  var lang=pick(q)||hashLang||pick(s)||((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en');
+  function set(l){b.setAttribute('data-lang',l);document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.set===l)});
+    var t=document.querySelector('meta[name=title-'+l+']');if(t)document.title=t.content;
+    var d=document.querySelector('meta[name=description]'),dl=document.querySelector('meta[name=description-'+l+']');if(d&&dl)d.content=dl.content;}
+  set(lang);
+  document.querySelectorAll('.lang button').forEach(function(x){x.addEventListener('click',function(){set(x.dataset.set);try{localStorage.setItem('lang',x.dataset.set)}catch(e){}})});
+})();</script>
+</body>
 </html>

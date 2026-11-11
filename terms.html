@@ -4,27 +4,107 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kullanım Koşulları · Explormap</title>
+<meta name="title-tr" content="Kullanım Koşulları · Explormap"><meta name="title-en" content="Terms of Use · Explormap">
+<meta name="description" content="Explormap uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursun."><meta name="description-tr" content="Explormap uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursun."><meta name="description-en" content="By using the Explormap app you agree to the terms below.">
+<meta name="theme-color" content="#0B2E3D">
+<meta property="og:title" content="Terms of Use · Explormap"><meta property="og:description" content="By using the Explormap app you agree to the terms below."><meta property="og:image" content="img/paylasim-en.jpg"><meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon-64.png"><link rel="apple-touch-icon" href="img/simge-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#f6f4ef; --card:#fff; --text:#16202a; --muted:#5b6670; --accent:#0f5c6e; --line:#e3ded4; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0f171e; --card:#17222c; --text:#eef2f5; --muted:#a3afba; --accent:#7cc7d6; --line:#26333f; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
-  nav { display:flex; flex-wrap:wrap; gap:8px 16px; margin-bottom:24px; }
-  nav a, a { color:var(--accent); }
-  h1 { font-size:28px; line-height:1.25; margin:8px 0; }
-  h2 { font-size:20px; margin:0 0 8px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:12px 0; }
-  .muted { color:var(--muted); font-size:14px; }
-  .lang { margin-top:48px; padding-top:24px; border-top:2px solid var(--line); }
-  p { margin:6px 0; }
-  details { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 16px; margin:8px 0; }
-  summary { cursor:pointer; font-weight:600; }
+:root{--navy:#0B2E3D;--navy2:#0F5C73;--amber:#F2A93B;--amber-soft:#FDF1DF;--bg:#F5F6F8;--card:#fff;--text:#101820;--body:#3A4450;--muted:#5B6670;--line:#E3E6EA;--radius:20px}
+@media (prefers-color-scheme:dark){:root{--bg:#0C1419;--card:#152129;--text:#EEF2F5;--body:#C9D2DA;--muted:#93A1AD;--line:#24323D;--amber-soft:#2A2213}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2)}@media (prefers-color-scheme:dark){a{color:#7CC7D6}}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em;line-height:1.15;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+body[data-lang=tr] [data-l=en],body[data-lang=en] [data-l=tr]{display:none!important}
+header.top{position:sticky;top:0;z-index:10;background:rgba(11,46,61,.92);backdrop-filter:saturate(1.4) blur(10px)}
+header.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600}
+.brand .mark{width:26px;height:34px}.brand b{color:var(--amber);font-weight:600}
+nav.links{display:flex;gap:18px;margin-left:auto;align-items:center}
+nav.links a{color:#D6E4EA;text-decoration:none;font-size:15px}nav.links a:hover{color:#fff}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:#D6E4EA;font:600 13px/1 inherit;padding:8px 12px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--amber);color:var(--navy)}
+@media (max-width:760px){nav.links a.opt{display:none}}
+.hero{background:radial-gradient(1200px 500px at 85% 0%,rgba(242,169,59,.18),transparent 60%),linear-gradient(180deg,#0B2E3D,#0E3A4C);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:0}
+.hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:600}.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:#C9DCE3;max-width:34em;margin:18px 0 26px}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:14px;padding:10px 18px 10px 14px;border:1px solid rgba(255,255,255,.25);min-width:180px}
+.store svg{width:24px;height:24px;flex:none}.store small{display:block;font-size:11px;opacity:.8;line-height:1.2}.store strong{display:block;font-size:17px;line-height:1.2}
+.store.soon{opacity:.85;cursor:default}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#E8F1F4;border-radius:999px;padding:6px 14px;font-size:14px}
+.hero .wrap{padding-bottom:56px}
+.phones{display:flex;gap:18px;justify-content:center;align-items:flex-start}
+.phone{width:220px;border-radius:30px;padding:6px;background:#06161D;box-shadow:0 24px 50px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08)}
+.phone img{display:block;width:100%;height:auto;border-radius:24px}
+.phone.a{margin-top:44px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:8px;padding-top:40px;padding-bottom:40px}.pills{margin-bottom:24px}.phone{width:46%;max-width:210px}.phone.a{margin-top:28px}}
+@media (max-width:480px){.badges .store{min-width:0;flex:1 1 150px;padding:9px 12px}.store strong{font-size:15px}}
+section.block{padding:72px 0}section.block h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:10px}
+.kicker{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy2);margin-bottom:10px}
+@media (prefers-color-scheme:dark){.kicker{color:#7CC7D6}}
+.sub{color:var(--muted);font-size:18px;max-width:40em;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .ico{font-size:28px;line-height:1;margin-bottom:12px}.card h3{font-size:20px;margin-bottom:6px}.card p{margin:0;color:var(--body)}
+.shots{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding:4px 2px 8px}
+@media (max-width:860px){.shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}}
+.shots figure{margin:0;scroll-snap-align:start}@media (max-width:860px){.shots figure{flex:none;width:190px}}
+.shots img{width:100%;height:auto;display:block;border-radius:22px;padding:5px;background:#06161D;box-shadow:0 14px 30px rgba(11,46,61,.18)}
+.shots figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.steps .card{position:relative;padding-top:56px}.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:30px;height:30px;border-radius:50%;background:var(--amber);color:var(--navy);font-weight:800;display:grid;place-items:center}
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.plans{grid-template-columns:1fr}}
+.plan h3{font-size:22px}.plan .tag{display:inline-block;background:var(--amber-soft);color:#7A4B00;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;margin-bottom:10px}
+@media (prefers-color-scheme:dark){.plan .tag{color:#F7BE62}}
+.plan ul{margin:12px 0 0;padding-left:18px;color:var(--body)}.plan.hi{border:2px solid var(--amber)}
+.fine{color:var(--muted);font-size:14px;margin-top:16px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:10px 0}summary{cursor:pointer;font-weight:700}details p{color:var(--body);margin:10px 0 0}
+.cta{background:linear-gradient(135deg,#0B2E3D,#0F5C73);color:#fff;border-radius:28px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.cta h2{color:#fff}.cta p{color:#C9DCE3;margin:8px 0 0}
+footer.bottom{background:#081F29;color:#9FB4BE;padding:40px 0;margin-top:72px;font-size:14px}
+footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}footer.bottom a{color:#D6E4EA;text-decoration:none;margin-right:16px}
+.doc{max-width:780px;margin:0 auto;padding:40px 20px 0}.doc h1{font-size:clamp(30px,4vw,42px);margin:6px 0 12px}.doc .muted{color:var(--muted);font-size:14px}
+.doc section.card{margin:14px 0}.doc section.card h2{font-size:20px;margin-bottom:8px}.doc section.card p{margin:6px 0;color:var(--body)}
 </style>
 </head>
-<body><main><nav><a href="privacy.html#tr">Gizlilik</a><a href="terms.html#tr">Kullanım koşulları</a><a href="licenses.html#tr">Lisanslar</a><a href="support.html#tr">Destek</a></nav><div id="tr">
+<body data-lang="tr">
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a>
+<nav class="links">
+<a class="opt" href="index.html"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a>
+<a class="opt" href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
+<span class="lang" role="group" aria-label="Dil / Language"><button type="button" data-set="tr" aria-pressed="false">TR</button><button type="button" data-set="en" aria-pressed="false">EN</button></span>
+</nav></div></header>
+<main class="doc"><div id="tr" class="lang-sec" data-l="tr">
 <p class="muted">Explormap · Son güncelleme: 9 Kasım 2026</p>
-<h1>Kullanım Koşulları</h1><p>Explormap uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursun.</p><section class="card"><h2>Hizmet</h2><p>Explormap; şehir rehberi, gezi planlama, hazır rotalar, harcama takibi ve benzeri araçlar sunan bir gezi uygulamasıdır. Uygulama Explormap tarafından sunulur.</p></section><section class="card"><h2>Bilgilerin doğruluğu</h2><p>Açılış saatleri, bilet fiyatları, ulaşım ve hava durumu gibi bilgiler değişebilir; uygulamadaki bilgiler önerinin ötesinde bir garanti taşımaz. Gitmeden önce resmi kaynaklardan doğrulamanı öneririz. Plandaki saatler ve akıllı planlayıcının önerileri tahmindir.</p><p>Uygulamanın verdiği bilgilere dayanarak yapılan seyahat, rezervasyon ve harcamalardan kullanıcı sorumludur.</p></section><section class="card"><h2>Paketler ve ödemeler</h2><p>Ücretsiz pakette sınırlı gün ve rota açıktır. Ücretli paketler (7 günlük Gezi bileti, Aylık ve Yıllık) satın alındığı mağazadaki fiyat ve süreyle açılır. Gezi bileti tek seferlik ödemedir ve 7 gün sonra kendiliğinden biter; Aylık ve Yıllık otomatik yenilenen aboneliklerdir. Ödeme, iade ve abonelik iptali App Store ya da Google Play kurallarına göre, ilgili mağaza üzerinden yapılır.</p><p>6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği'nden doğan hakların saklıdır.</p></section><section class="card"><h2>Kullanım kuralları</h2><p>Uygulamayı yasalara uygun kullanmayı; içeriği izinsiz kopyalayıp ticari olarak dağıtmamayı, uygulamanın işleyişini bozmaya çalışmamayı kabul edersin.</p></section><section class="card"><h2>Fikri haklar</h2><p>Uygulamanın tasarımı ve özgün metinleri Explormap'a aittir. Fotoğraflar, harita ve bazı tarihçe metinleri kendi lisanslarıyla kullanılır; ayrıntılar "Lisanslar ve kaynaklar" sayfasındadır.</p></section><section class="card"><h2>Sorumluluğun sınırı</h2><p>Uygulama "olduğu gibi" sunulur. Yasaların izin verdiği ölçüde, uygulamanın kullanımından ya da kullanılamamasından doğan dolaylı zararlardan Explormap sorumlu tutulamaz.</p></section><section class="card"><h2>Değişiklikler ve uygulanacak hukuk</h2><p>Bu koşullar güncellenebilir; güncel hâli uygulamada yayımlanır. Koşullar Türkiye Cumhuriyeti hukukuna tabidir. Sorular için: info@explormap.app</p></section></div><div id="en" class="lang">
+<h1>Kullanım Koşulları</h1><p>Explormap uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursun.</p><section class="card"><h2>Hizmet</h2><p>Explormap; şehir rehberi, gezi planlama, hazır rotalar, gezi pasaportu, harcama takibi ve benzeri araçlar sunan bir gezi uygulamasıdır. Uygulama Explormap tarafından sunulur.</p></section><section class="card"><h2>Hesap</h2><p>Uygulamayı hesap açmadan, misafir olarak kullanabilirsin. Hesap açarsan doğru bir e-posta adresi kullanmaktan ve şifreni güvende tutmaktan sen sorumlusun; hesabının izinsiz kullanıldığını düşünürsen şifreni değiştir ve bize yaz.</p><p>Hesabını istediğin zaman Profil → Hesabımı sil adımıyla kalıcı olarak silebilirsin. Bu koşullara aykırı ya da uygulamanın işleyişini bozan kullanımda hesap askıya alınabilir veya kapatılabilir.</p></section><section class="card"><h2>Bilgilerin doğruluğu</h2><p>Açılış saatleri, bilet fiyatları, ulaşım ve hava durumu gibi bilgiler değişebilir; uygulamadaki bilgiler önerinin ötesinde bir garanti taşımaz. Gitmeden önce resmi kaynaklardan doğrulamanı öneririz. Plandaki saatler, asistanın ve akıllı planlayıcının önerileri tahmindir.</p><p>Uygulamanın verdiği bilgilere dayanarak yapılan seyahat, rezervasyon ve harcamalardan kullanıcı sorumludur.</p></section><section class="card"><h2>Paketler ve ödemeler</h2><p>Ücretsiz pakette sınırlı gün ve rota açıktır. Ücretli paketler (7 günlük Gezi bileti, Aylık ve Yıllık) satın alındığı mağazadaki fiyat ve süreyle açılır.</p><p>Gezi bileti tek seferlik ödemedir ve 7 gün sonra kendiliğinden biter, yenilenmez. Aylık ve Yıllık otomatik yenilenen aboneliklerdir: ücret, satın alma onayıyla App Store ya da Google Play hesabından alınır; abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse aynı süre ve fiyatla yenilenir. Aboneliğini mağazanın abonelik ayarlarından yönetebilir ve iptal edebilirsin; iptal, o dönemin sonunda geçerli olur.</p><p>Ödeme ve iade işlemleri App Store ya da Google Play kurallarına göre, ilgili mağaza üzerinden yapılır. App Store’dan indirilen uygulama için Apple’ın Standart Lisans Sözleşmesi (EULA) de geçerlidir.</p><p>6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği'nden doğan hakların saklıdır.</p></section><section class="card"><h2>Kullanım kuralları</h2><p>Uygulamayı yasalara uygun kullanmayı; içeriği izinsiz kopyalayıp ticari olarak dağıtmamayı, uygulamanın ya da sunucuların işleyişini bozmaya, başkalarının hesaplarına erişmeye çalışmamayı kabul edersin.</p></section><section class="card"><h2>Fikri haklar</h2><p>Uygulamanın tasarımı ve özgün metinleri Explormap'a aittir. Fotoğraflar, harita ve bazı tarihçe metinleri kendi lisanslarıyla kullanılır; ayrıntılar &quot;Lisanslar ve kaynaklar&quot; sayfasındadır.</p></section><section class="card"><h2>Üçüncü taraf hizmetler</h2><p>Giriş, hesap altyapısı, ödeme, harita ve hava durumu gibi bazı işlevler Apple, Google, RevenueCat, OpenStreetMap ve Open-Meteo gibi üçüncü taraf hizmetlerle sağlanır. Bu hizmetlerin kesintilerinden ve kendi koşullarından Explormap sorumlu değildir.</p></section><section class="card"><h2>Sorumluluğun sınırı</h2><p>Uygulama &quot;olduğu gibi&quot; sunulur. Yasaların izin verdiği ölçüde, uygulamanın kullanımından ya da kullanılamamasından doğan dolaylı zararlardan Explormap sorumlu tutulamaz. Uygulamanın özellikleri zamanla değişebilir.</p></section><section class="card"><h2>Değişiklikler ve uygulanacak hukuk</h2><p>Bu koşullar güncellenebilir; güncel hâli uygulamada ve web sayfamızda yayımlanır. Koşullar Türkiye Cumhuriyeti hukukuna tabidir. Sorular için: info@explormap.app</p></section></div><div id="en" class="lang-sec" data-l="en">
 <p class="muted">Explormap · Last updated: 9 November 2026</p>
-<h1>Terms of Use</h1><p>By using the Explormap app you agree to the terms below.</p><section class="card"><h2>The service</h2><p>Explormap is a travel app offering city guides, trip planning, ready-made routes, expense tracking and similar tools. It is provided by Explormap.</p></section><section class="card"><h2>Accuracy of information</h2><p>Information such as opening hours, ticket prices, transport and weather can change; what the app shows is guidance, not a guarantee. Please check official sources before you go. Times in your plan and suggestions from the smart planner are estimates.</p><p>You are responsible for travel, bookings and spending based on information in the app.</p></section><section class="card"><h2>Plans and payments</h2><p>The free plan unlocks a limited number of days and routes. Paid plans (the 7-day Trip pass, Monthly and Yearly) are unlocked at the price and for the period shown in the store. The Trip pass is a one-time payment that ends automatically after 7 days; Monthly and Yearly are auto-renewing subscriptions. Payments, refunds and cancellations are handled by the App Store or Google Play under their rules.</p><p>Your statutory consumer rights are not affected.</p></section><section class="card"><h2>Acceptable use</h2><p>You agree to use the app lawfully, not to copy and redistribute its content commercially without permission, and not to try to disrupt how it works.</p></section><section class="card"><h2>Intellectual property</h2><p>The app's design and original texts belong to Explormap. Photos, maps and some history texts are used under their own licences; see "Licences and sources".</p></section><section class="card"><h2>Limitation of liability</h2><p>The app is provided "as is". To the extent permitted by law, Explormap is not liable for indirect damage arising from using or being unable to use the app.</p></section><section class="card"><h2>Changes and governing law</h2><p>These terms may be updated; the current version is published in the app. They are governed by the laws of the Republic of Türkiye. Questions: info@explormap.app</p></section></div></main></body>
+<h1>Terms of Use</h1><p>By using the Explormap app you agree to the terms below.</p><section class="card"><h2>The service</h2><p>Explormap is a travel app offering city guides, trip planning, ready-made routes, a travel passport, expense tracking and similar tools. It is provided by Explormap.</p></section><section class="card"><h2>Your account</h2><p>You can use the app as a guest without an account. If you create one, you are responsible for using a valid email address and keeping your password safe; if you think your account has been used without permission, change your password and contact us.</p><p>You can permanently delete your account at any time in Profile → Delete my account. Accounts used in breach of these terms or to disrupt the app may be suspended or closed.</p></section><section class="card"><h2>Accuracy of information</h2><p>Information such as opening hours, ticket prices, transport and weather can change; what the app shows is guidance, not a guarantee. Please check official sources before you go. Times in your plan and suggestions from the Assistant and smart planner are estimates.</p><p>You are responsible for travel, bookings and spending based on information in the app.</p></section><section class="card"><h2>Plans and payments</h2><p>The free plan unlocks a limited number of days and routes. Paid plans (the 7-day Trip pass, Monthly and Yearly) are unlocked at the price and for the period shown in the store.</p><p>The Trip pass is a one-time payment that ends automatically after 7 days and does not renew. Monthly and Yearly are auto-renewing subscriptions: payment is charged to your App Store or Google Play account when you confirm the purchase, and the subscription renews for the same period and price unless cancelled at least 24 hours before the end of the current period. You can manage and cancel it in your store's subscription settings; cancellation takes effect at the end of that period.</p><p>Payments and refunds are handled by the App Store or Google Play under their rules. For the app downloaded from the App Store, Apple's Standard Licensed Application End User License Agreement (EULA) also applies.</p><p>Your statutory consumer rights are not affected.</p></section><section class="card"><h2>Acceptable use</h2><p>You agree to use the app lawfully, not to copy and redistribute its content commercially without permission, and not to try to disrupt the app or its servers or to access other people's accounts.</p></section><section class="card"><h2>Intellectual property</h2><p>The app's design and original texts belong to Explormap. Photos, maps and some history texts are used under their own licences; see &quot;Licences and sources&quot;.</p></section><section class="card"><h2>Third-party services</h2><p>Some features such as sign-in, account infrastructure, payments, maps and weather are provided by third parties such as Apple, Google, RevenueCat, OpenStreetMap and Open-Meteo. Explormap is not responsible for their outages or their own terms.</p></section><section class="card"><h2>Limitation of liability</h2><p>The app is provided &quot;as is&quot;. To the extent permitted by law, Explormap is not liable for indirect damage arising from using or being unable to use the app. Features may change over time.</p></section><section class="card"><h2>Changes and governing law</h2><p>These terms may be updated; the current version is published in the app and on our website. They are governed by the laws of the Republic of Türkiye. Questions: info@explormap.app</p></section></div></main>
+<footer class="bottom"><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a><p style="margin:10px 0 0">© 2026 Explormap · <a href="mailto:info@explormap.app">info@explormap.app</a></p></div>
+<div><a href="privacy.html"><span data-l="tr">Gizlilik</span><span data-l="en">Privacy</span></a><a href="terms.html"><span data-l="tr">Kullanım koşulları</span><span data-l="en">Terms of use</span></a><a href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a><a href="support.html#hesap-silme"><span data-l="tr">Hesap silme</span><span data-l="en">Delete account</span></a><a href="licenses.html"><span data-l="tr">Lisanslar</span><span data-l="en">Licences</span></a></div>
+</div></footer>
+<script>
+(function(){
+  var b=document.body, q=new URLSearchParams(location.search).get('lang'), h=(location.hash||'').slice(1), s=null;
+  try{s=localStorage.getItem('lang')}catch(e){}
+  var pick=function(x){return x==='tr'||x==='en'?x:null};
+  var hashLang = pick(h) || (h==='hesap-silme'?'tr':h==='delete-account'?'en':null);
+  var lang=pick(q)||hashLang||pick(s)||((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en');
+  function set(l){b.setAttribute('data-lang',l);document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.set===l)});
+    var t=document.querySelector('meta[name=title-'+l+']');if(t)document.title=t.content;
+    var d=document.querySelector('meta[name=description]'),dl=document.querySelector('meta[name=description-'+l+']');if(d&&dl)d.content=dl.content;}
+  set(lang);
+  document.querySelectorAll('.lang button').forEach(function(x){x.addEventListener('click',function(){set(x.dataset.set);try{localStorage.setItem('lang',x.dataset.set)}catch(e){}})});
+})();</script>
+</body>
 </html>
