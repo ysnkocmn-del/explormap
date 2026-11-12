@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İletişim ve Başvuru · Explormap</title>
+<meta name="title-tr" content="İletişim ve Başvuru · Explormap"><meta name="title-en" content="Contact and Requests · Explormap">
+<meta name="description" content="Explormap ile iletişim ve KVKK kapsamında başvuru."><meta name="description-tr" content="Explormap ile iletişim ve KVKK kapsamında başvuru."><meta name="description-en" content="Contact Explormap and make personal data requests.">
+<meta name="theme-color" content="#0B2E3D">
+<meta property="og:title" content="Contact and Requests · Explormap"><meta property="og:description" content="Contact Explormap and make personal data requests."><meta property="og:image" content="img/paylasim-en.jpg"><meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon-64.png"><link rel="apple-touch-icon" href="img/simge-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2E3D;--navy2:#0F5C73;--amber:#F2A93B;--amber-soft:#FDF1DF;--bg:#F5F6F8;--card:#fff;--text:#101820;--body:#3A4450;--muted:#5B6670;--line:#E3E6EA;--radius:20px}
+@media (prefers-color-scheme:dark){:root{--bg:#0C1419;--card:#152129;--text:#EEF2F5;--body:#C9D2DA;--muted:#93A1AD;--line:#24323D;--amber-soft:#2A2213}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2)}@media (prefers-color-scheme:dark){a{color:#7CC7D6}}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em;line-height:1.15;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+body[data-lang=tr] [data-l=en],body[data-lang=en] [data-l=tr]{display:none!important}
+header.top{position:sticky;top:0;z-index:10;background:rgba(11,46,61,.92);backdrop-filter:saturate(1.4) blur(10px)}
+header.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600}
+.brand .mark{width:26px;height:34px}.brand b{color:var(--amber);font-weight:600}
+nav.links{display:flex;gap:18px;margin-left:auto;align-items:center}
+nav.links a{color:#D6E4EA;text-decoration:none;font-size:15px}nav.links a:hover{color:#fff}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:#D6E4EA;font:600 13px/1 inherit;padding:8px 12px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--amber);color:var(--navy)}
+@media (max-width:760px){nav.links a.opt{display:none}}
+.hero{background:radial-gradient(1200px 500px at 85% 0%,rgba(242,169,59,.18),transparent 60%),linear-gradient(180deg,#0B2E3D,#0E3A4C);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:0}
+.hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:600}.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:#C9DCE3;max-width:34em;margin:18px 0 26px}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:14px;padding:10px 18px 10px 14px;border:1px solid rgba(255,255,255,.25);min-width:180px}
+.store svg{width:24px;height:24px;flex:none}.store small{display:block;font-size:11px;opacity:.8;line-height:1.2}.store strong{display:block;font-size:17px;line-height:1.2}
+.store.soon{opacity:.85;cursor:default}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#E8F1F4;border-radius:999px;padding:6px 14px;font-size:14px}
+.hero .wrap{padding-bottom:56px}
+.phones{display:flex;gap:18px;justify-content:center;align-items:flex-start}
+.phone{width:220px;border-radius:30px;padding:6px;background:#06161D;box-shadow:0 24px 50px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08)}
+.phone img{display:block;width:100%;height:auto;border-radius:24px}
+.phone.a{margin-top:44px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:8px;padding-top:40px;padding-bottom:40px}.pills{margin-bottom:24px}.phone{width:46%;max-width:210px}.phone.a{margin-top:28px}}
+@media (max-width:480px){.badges .store{min-width:0;flex:1 1 150px;padding:9px 12px}.store strong{font-size:15px}}
+section.block{padding:72px 0}section.block h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:10px}
+.kicker{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy2);margin-bottom:10px}
+@media (prefers-color-scheme:dark){.kicker{color:#7CC7D6}}
+.sub{color:var(--muted);font-size:18px;max-width:40em;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .ico{font-size:28px;line-height:1;margin-bottom:12px}.card h3{font-size:20px;margin-bottom:6px}.card p{margin:0;color:var(--body)}
+.shots{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding:4px 2px 8px}
+@media (max-width:860px){.shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}}
+.shots figure{margin:0;scroll-snap-align:start}@media (max-width:860px){.shots figure{flex:none;width:190px}}
+.shots img{width:100%;height:auto;display:block;border-radius:22px;padding:5px;background:#06161D;box-shadow:0 14px 30px rgba(11,46,61,.18)}
+.shots figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.steps .card{position:relative;padding-top:56px}.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:30px;height:30px;border-radius:50%;background:var(--amber);color:var(--navy);font-weight:800;display:grid;place-items:center}
+.more{font-weight:700;text-decoration:none}
+.guide{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media (max-width:760px){.guide{grid-template-columns:1fr}}
+.guide .card{scroll-margin-top:84px}.guide h3{font-size:21px;margin-bottom:4px}
+.guide .where{display:inline-block;background:var(--amber-soft);border-radius:10px;padding:4px 10px;font-size:14px;color:var(--body);margin:6px 0 2px}
+.guide ol{margin:10px 0 0;padding-left:20px;color:var(--body)}.guide li{margin:6px 0}
+.hero a.pill:hover{background:rgba(255,255,255,.2)}
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.plans{grid-template-columns:1fr}}
+.plan h3{font-size:22px}.plan .tag{display:inline-block;background:var(--amber-soft);color:#7A4B00;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;margin-bottom:10px}
+@media (prefers-color-scheme:dark){.plan .tag{color:#F7BE62}}
+.plan ul{margin:12px 0 0;padding-left:18px;color:var(--body)}.plan.hi{border:2px solid var(--amber)}
+.fine{color:var(--muted);font-size:14px;margin-top:16px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:10px 0}summary{cursor:pointer;font-weight:700}details p{color:var(--body);margin:10px 0 0}
+.cta{background:linear-gradient(135deg,#0B2E3D,#0F5C73);color:#fff;border-radius:28px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.cta h2{color:#fff}.cta p{color:#C9DCE3;margin:8px 0 0}
+footer.bottom{background:#081F29;color:#9FB4BE;padding:40px 0;margin-top:72px;font-size:14px}
+footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}footer.bottom a{color:#D6E4EA;text-decoration:none}footer.bottom a:hover{color:#fff}
+.fcols{display:flex;flex-wrap:wrap;gap:40px}.fcols>div{display:flex;flex-direction:column;gap:8px;min-width:150px}.fcols b{color:#fff;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.posts{grid-template-columns:1fr}}
+.post-card{display:block;text-decoration:none;color:inherit}.post-card:hover{border-color:var(--amber)}.post-card .ico{font-size:32px}.post-card h3{font-size:21px;margin:10px 0 8px}.post-card p{color:var(--body);margin:0}.post-card .muted{display:block;margin-top:12px}
+.article h2{font-size:24px;margin:28px 0 8px}.article p,.article li{color:var(--body);font-size:17px}.article ul{padding-left:20px}
+.btn{display:inline-block;background:var(--navy2);color:#fff!important;text-decoration:none;font-weight:700;border-radius:12px;padding:10px 18px;margin:6px 8px 0 0}
+.doc{max-width:780px;margin:0 auto;padding:40px 20px 0}.doc h1{font-size:clamp(30px,4vw,42px);margin:6px 0 12px}.doc .muted{color:var(--muted);font-size:14px}
+.doc section.card{margin:14px 0}.doc section.card h2{font-size:20px;margin-bottom:8px}.doc section.card p{margin:6px 0;color:var(--body)}
+</style>
+</head>
+<body data-lang="tr">
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a>
+<nav class="links">
+<a class="opt" href="index.html"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a>
+<a class="opt" href="guide.html"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a>
+<a class="opt" href="blog.html">Blog</a>
+<a class="opt" href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
+<span class="lang" role="group" aria-label="Dil / Language"><button type="button" data-set="tr" aria-pressed="false">TR</button><button type="button" data-set="en" aria-pressed="false">EN</button></span>
+</nav></div></header>
+<main class="doc"><div id="tr" class="lang-sec" data-l="tr">
+<h1>İletişim ve Başvuru</h1><p>Soruların, önerilerin ve kişisel verilerinle ilgili başvuruların için bize ulaşabilirsin.</p>
+<section class="card"><h2>Bize ulaş</h2><p>E-posta: info@explormap.app</p><p>Genellikle 2 iş günü içinde cevap veririz. Uygulamayla ilgili bir sorun yazıyorsan telefon modelini ve uygulama sürümünü (Profil sayfasının en altında) eklemen işimizi kolaylaştırır.</p><a class="btn" href="mailto:info@explormap.app?subject=Explormap">E-posta gönder</a></section>
+<section class="card" id="kvkk-basvuru"><h2>KVKK kapsamında başvuru</h2><p>KVKK’nın 11. maddesindeki haklarını kullanmak için başvurunu yazılı olarak ya da sistemimizde kayıtlı e-posta adresinden (hesabına bağlı adres) info@explormap.app adresine iletebilirsin. Kayıtlı elektronik posta (KEP), güvenli elektronik imza ya da mobil imza ile de başvurabilirsin.</p><p>Başvurunda şunlar yer almalı: adın soyadın ve imzan (yazılı başvuruda); Türk vatandaşıysan T.C. kimlik numaran, değilsen uyruğun ve pasaport ya da kimlik numaran; tebligata esas yerleşim yeri ya da iş yeri adresin; varsa bildirime esas e-posta adresin ya da telefonun ve talebinin konusu.</p><p>E-posta konusuna “KVKK Başvurusu” yazman yeterli. Kimliğini doğrulamak için ek bilgi isteyebiliriz. Başvurun en geç 30 gün içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi hâlinde Kurul’ca belirlenen tarifedeki ücret istenebilir.</p><a class="btn" href="mailto:info@explormap.app?subject=KVKK%20Ba%C5%9Fvurusu">KVKK başvurusu gönder</a></section>
+<section class="card"><h2>Hesabını ya da verilerini silme</h2><p>Çoğu durumda başvuruya gerek yok: giriş yaptıysan Profil → Hesabımı sil, misafirsen Profil → Verilerimi sil adımıyla bilgilerin hemen silinir. Ayrıntılar Destek sayfasındadır.</p><p><a href="support.html#hesap-silme">Destek → Hesap silme</a></p></section>
+</div><div id="en" class="lang-sec" data-l="en">
+<h1>Contact and Requests</h1><p>Get in touch with questions, suggestions or requests about your personal data.</p>
+<section class="card"><h2>Contact us</h2><p>Email: info@explormap.app</p><p>We usually reply within 2 business days. If you are reporting a problem with the app, including your phone model and app version (at the bottom of the Profile screen) helps us a lot.</p><a class="btn" href="mailto:info@explormap.app?subject=Explormap">Send an email</a></section>
+<section class="card" id="data-request"><h2>Personal data requests (KVKK)</h2><p>To use your rights under Article 11 of KVKK, send your request in writing or from the email address registered with us (the one linked to your account) to info@explormap.app. You may also apply by registered electronic mail (KEP), secure electronic signature or mobile signature.</p><p>Your request should include: your full name and signature (for written requests); your Turkish ID number if you are a Turkish citizen, otherwise your nationality and passport or ID number; your residential or business address; your email address or phone number for notifications, if any; and what you are requesting.</p><p>Just put “KVKK Request” in the subject line. We may ask for more information to verify your identity. Your request is answered free of charge within 30 days at the latest; if it involves an additional cost, a fee set by the Board’s tariff may be charged.</p><a class="btn" href="mailto:info@explormap.app?subject=KVKK%20Request">Send a data request</a></section>
+<section class="card"><h2>Deleting your account or data</h2><p>Usually no request is needed: if you are signed in, Profile → Delete my account; as a guest, Profile → Delete my data removes your information immediately. See the Support page for details.</p><p><a href="support.html#delete-account">Support → Delete account</a></p></section>
+</div></main>
+<footer class="bottom"><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a><p style="margin:10px 0 0">© 2026 Explormap · <a href="mailto:info@explormap.app">info@explormap.app</a></p></div>
+<div class="fcols">
+<div><b><span data-l="tr">Explormap</span><span data-l="en">Explormap</span></b><a href="guide.html"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a><a href="blog.html">Blog</a><a href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a><a href="contact.html"><span data-l="tr">İletişim ve Başvuru</span><span data-l="en">Contact and Requests</span></a></div>
+<div><b><span data-l="tr">Yasal</span><span data-l="en">Legal</span></b><a href="kvkk.html"><span data-l="tr">KVKK Aydınlatma Metni</span><span data-l="en">Personal Data Notice (KVKK)</span></a><a href="privacy.html"><span data-l="tr">Gizlilik Politikası</span><span data-l="en">Privacy Policy</span></a><a href="cookies.html"><span data-l="tr">Çerez Politikası</span><span data-l="en">Cookie Policy</span></a><a href="terms.html"><span data-l="tr">Kullanım Koşulları</span><span data-l="en">Terms of Use</span></a><a href="distance-sales.html"><span data-l="tr">Mesafeli Satış ve İade</span><span data-l="en">Distance Sales and Refunds</span></a></div>
+<div><b><span data-l="tr">Hesap</span><span data-l="en">Account</span></b><a href="support.html#hesap-silme"><span data-l="tr">Hesap silme</span><span data-l="en">Delete account</span></a><a href="licenses.html"><span data-l="tr">Lisanslar</span><span data-l="en">Licences</span></a></div>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.body, q=new URLSearchParams(location.search).get('lang'), h=(location.hash||'').slice(1), s=null;
+  try{s=localStorage.getItem('lang')}catch(e){}
+  var pick=function(x){return x==='tr'||x==='en'?x:null};
+  var hashLang = pick(h) || (h==='hesap-silme'?'tr':h==='delete-account'?'en':null);
+  var lang=pick(q)||hashLang||pick(s)||((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en');
+  function set(l){b.setAttribute('data-lang',l);document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.set===l)});
+    var t=document.querySelector('meta[name=title-'+l+']');if(t)document.title=t.content;
+    var d=document.querySelector('meta[name=description]'),dl=document.querySelector('meta[name=description-'+l+']');if(d&&dl)d.content=dl.content;}
+  set(lang);
+  document.querySelectorAll('.lang button').forEach(function(x){x.addEventListener('click',function(){set(x.dataset.set);try{localStorage.setItem('lang',x.dataset.set)}catch(e){}})});
+})();</script>
+</body>
+</html>
