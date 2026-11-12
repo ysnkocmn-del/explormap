@@ -25,7 +25,7 @@ header.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600}
 .brand .mark{width:26px;height:34px}.brand b{color:var(--amber);font-weight:600}
 nav.links{display:flex;gap:18px;margin-left:auto;align-items:center}
-nav.links a{color:#D6E4EA;text-decoration:none;font-size:15px}nav.links a:hover{color:#fff}
+nav.links a{color:#D6E4EA;text-decoration:none;font-size:15px}nav.links a.on{color:var(--amber);font-weight:600}section[id]{scroll-margin-top:64px}nav.links a:hover{color:#fff}
 .lang{display:inline-flex;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden}
 .lang button{background:none;border:0;color:#D6E4EA;font:600 13px/1 inherit;padding:8px 12px;cursor:pointer}
 .lang button[aria-pressed=true]{background:var(--amber);color:var(--navy)}
@@ -90,7 +90,7 @@ footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-b
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a>
 <nav class="links">
-<a class="opt" href="index.html"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a>
+<a class="opt" href="index.html"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a><a class="opt" href="index.html#ozellikler"><span data-l="tr">Özellikler</span><span data-l="en">Features</span></a><a class="opt" href="index.html#paketler"><span data-l="tr">Paketler</span><span data-l="en">Plans</span></a>
 <a class="opt" href="guide.html"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a>
 <a class="opt" href="blog.html">Blog</a>
 <a class="opt" href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
@@ -163,6 +163,8 @@ footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-b
     var t=document.querySelector('meta[name=title-'+l+']');if(t)document.title=t.content;
     var d=document.querySelector('meta[name=description]'),dl=document.querySelector('meta[name=description-'+l+']');if(d&&dl)d.content=dl.content;}
   set(lang);
+  var f=location.pathname.split('/').pop()||'index.html'; if(f.indexOf('blog')===0)f='blog.html';
+  document.querySelectorAll('nav.links a').forEach(function(a){if(a.getAttribute('href')===f)a.className+=' on'});
   document.querySelectorAll('.lang button').forEach(function(x){x.addEventListener('click',function(){set(x.dataset.set);try{localStorage.setItem('lang',x.dataset.set)}catch(e){}})});
 })();</script>
 </body>
