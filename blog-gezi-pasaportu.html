@@ -29,7 +29,13 @@ nav.links a{color:#D6E4EA;text-decoration:none;font-size:15px}nav.links a.on{col
 .lang{display:inline-flex;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden}
 .lang button{background:none;border:0;color:#D6E4EA;font:600 13px/1 inherit;padding:8px 12px;cursor:pointer}
 .lang button[aria-pressed=true]{background:var(--amber);color:var(--navy)}
-@media (max-width:760px){nav.links a.opt{display:none}}
+.menu{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px;background:none;border:1px solid rgba(255,255,255,.3);border-radius:12px;cursor:pointer}
+.menu span{display:block;height:2px;border-radius:2px;background:#fff;transition:transform .2s,opacity .2s}
+header.top.open .menu span:nth-child(1){transform:translateY(7px) rotate(45deg)}header.top.open .menu span:nth-child(2){opacity:0}header.top.open .menu span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{display:none}
+@media (max-width:760px){nav.links{gap:10px}nav.links a.opt{display:none}.menu{display:inline-flex}
+header.top.open .mnav{display:flex;flex-direction:column;padding:6px 20px 14px;border-top:1px solid rgba(255,255,255,.12)}
+.mnav a{color:#D6E4EA;text-decoration:none;font-size:17px;padding:12px 2px;border-bottom:1px solid rgba(255,255,255,.08)}.mnav a:last-child{border-bottom:0}.mnav a.on{color:var(--amber);font-weight:600}}
 .hero{background:radial-gradient(1200px 500px at 85% 0%,rgba(242,169,59,.18),transparent 60%),linear-gradient(180deg,#0B2E3D,#0E3A4C);color:#fff;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:0}
 .hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:600}.hero h1 em{font-style:normal;color:var(--amber)}
@@ -88,27 +94,32 @@ footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-b
 </head>
 <body data-lang="tr">
 <header class="top"><div class="wrap">
-<a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a>
+<a class="brand" href="./"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a>
 <nav class="links">
-<a class="opt" href="index.html"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a><a class="opt" href="index.html#ozellikler"><span data-l="tr">Özellikler</span><span data-l="en">Features</span></a><a class="opt" href="index.html#paketler"><span data-l="tr">Paketler</span><span data-l="en">Plans</span></a>
-<a class="opt" href="guide.html"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a>
-<a class="opt" href="blog.html">Blog</a>
-<a class="opt" href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
+<a class="opt" href="./"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a><a class="opt" href="./#ozellikler"><span data-l="tr">Özellikler</span><span data-l="en">Features</span></a><a class="opt" href="./#paketler"><span data-l="tr">Paketler</span><span data-l="en">Plans</span></a>
+<a class="opt" href="nasil-calisir"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a>
+<a class="opt" href="blog">Blog</a>
+<a class="opt" href="destek"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
 <span class="lang" role="group" aria-label="Dil / Language"><button type="button" data-set="tr" aria-pressed="false">TR</button><button type="button" data-set="en" aria-pressed="false">EN</button></span>
-</nav></div></header>
+<button type="button" class="menu" aria-expanded="false" aria-controls="mnav" aria-label="Menü / Menu"><span></span><span></span><span></span></button>
+</nav></div>
+<nav class="mnav" id="mnav"><a class="opt" href="./"><span data-l="tr">Ana sayfa</span><span data-l="en">Home</span></a><a class="opt" href="./#ozellikler"><span data-l="tr">Özellikler</span><span data-l="en">Features</span></a><a class="opt" href="./#paketler"><span data-l="tr">Paketler</span><span data-l="en">Plans</span></a>
+<a class="opt" href="nasil-calisir"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a>
+<a class="opt" href="blog">Blog</a>
+<a class="opt" href="destek"><span data-l="tr">Destek</span><span data-l="en">Support</span></a></nav></header>
 <main class="doc"><div id="tr" class="lang-sec article" data-l="tr">
-<p class="muted"><a href="blog.html">Blog</a> · 12 Kasım 2026</p>
+<p class="muted"><a href="blog">Blog</a> · 12 Kasım 2026</p>
 <h1>Gezi pasaportu: gittiğin ülkeleri biriktirmenin keyifli yolu</h1><p><b>Gerçek pasaportundaki damgalar zamanla kayboluyor. Explormap’in gezi pasaportu, gezdiğin her ülkeyi kendi sınır şekliyle bir damga olarak saklıyor.</b></p><p>Pasaport damgaları bir gezinin en sevilen hatıralarından biri. Ama sınır kapılarında artık çoğu zaman damga basılmıyor, basılanlar da yıllar içinde soluyor ya da pasaport yenilenince kayboluyor.</p><h2>Her ülke, kendi şekliyle</h2><p>Explormap’te gittiğin her ülke, o ülkenin sınır şeklinde ve kendi rengiyle tasarlanmış bir damga olarak pasaportuna eklenir. Damganın üstünde ülkenin adı ve gittiğin tarih yer alır.</p><h2>Damgalar nasıl eklenir?</h2><ul><li>Plandaki yerleri gezdikçe ✓ ile işaretleyebilirsin.</li><li>Gezin bittiğinde Kayıtlar’daki gezide “Geziyi tamamla”ya basabilirsin.</li><li>Daha önce gittiğin ülkeleri pasaporttaki “Ülke ekle” ile kendin ekleyebilirsin.</li></ul><h2>Haritan renklensin</h2><p>Damgalar biriktikçe dünya haritan da boyanır. Kaç ülke gezdiğini, hangi kıtaları tamamladığını bir bakışta görürsün; “İlk ülke”, “Dolu pasaport” gibi rozetler kazanırsın.</p><h2>Paylaş</h2><p>Pasaportunu tek dokunuşla arkadaşlarınla paylaşabilir, bir sonraki rotanız için ilham olabilirsin.</p><p>Gezi pasaportu ücretsiz pakette de açık. Profil → Gezi Pasaportum’dan ilk damganı ekleyerek başlayabilirsin.</p>
-<p style="margin-top:32px"><a class="more" href="blog.html">← Tüm yazılar</a></p></div><div id="en" class="lang-sec article" data-l="en">
-<p class="muted"><a href="blog.html">Blog</a> · 12 November 2026</p>
+<p style="margin-top:32px"><a class="more" href="blog">← Tüm yazılar</a></p></div><div id="en" class="lang-sec article" data-l="en">
+<p class="muted"><a href="blog">Blog</a> · 12 November 2026</p>
 <h1>Travel passport: a fun way to collect the countries you visit</h1><p><b>Stamps in your real passport fade over time. Explormap’s travel passport keeps every country you visit as a stamp in its own border shape.</b></p><p>Passport stamps are one of the most loved souvenirs of a trip. But many borders no longer stamp passports, and the stamps you do get fade over the years or disappear when you renew your passport.</p><h2>Every country, in its own shape</h2><p>In Explormap, every country you visit is added to your passport as a stamp designed in that country’s border shape and colour, with the country’s name and the date you were there.</p><h2>How to add stamps</h2><ul><li>Tick off places in your plan with ✓ as you visit them.</li><li>When your trip ends, tap “Complete trip” on the saved trip.</li><li>Add countries you have visited before with “Add country” in the passport.</li></ul><h2>Colour in your map</h2><p>As stamps add up, your world map fills in. See at a glance how many countries you have visited and which continents you have completed, and earn badges like “First country” and “Full passport”.</p><h2>Share it</h2><p>Share your passport with friends in one tap and inspire your next trip together.</p><p>The travel passport is included in the free plan. Start by adding your first stamp from Profile → My Travel Passport.</p>
-<p style="margin-top:32px"><a class="more" href="blog.html">← All articles</a></p></div></main>
+<p style="margin-top:32px"><a class="more" href="blog">← All articles</a></p></div></main>
 <footer class="bottom"><div class="wrap">
-<div><a class="brand" href="index.html"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a><p style="margin:10px 0 0">© 2026 Explormap · <a href="mailto:info@explormap.app">info@explormap.app</a></p></div>
+<div><a class="brand" href="./"><svg viewBox="0 0 48 62" aria-hidden="true" class="mark"><path d="M24 59C24 59 3 36 3 23a21 21 0 0 1 42 0c0 13-21 36-21 36z" fill="#F2A93B"/><circle cx="24" cy="23" r="14" fill="#0B2E3D"/><circle cx="24" cy="23" r="10.5" fill="none" stroke="#F2A93B" stroke-opacity=".35" stroke-width="1.2"/><g transform="rotate(40 24 23)"><path d="M24 11l4.2 12h-8.4z" fill="#F2A93B"/><path d="M24 35l-4.2-12h8.4z" fill="#fff"/></g><circle cx="24" cy="23" r="2" fill="#0B2E3D"/></svg><span>Explor<b>map</b></span></a><p style="margin:10px 0 0">© 2026 Explormap · <a href="mailto:info@explormap.app">info@explormap.app</a></p></div>
 <div class="fcols">
-<div><b><span data-l="tr">Explormap</span><span data-l="en">Explormap</span></b><a href="guide.html"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a><a href="blog.html">Blog</a><a href="support.html"><span data-l="tr">Destek</span><span data-l="en">Support</span></a><a href="contact.html"><span data-l="tr">İletişim ve Başvuru</span><span data-l="en">Contact and Requests</span></a></div>
-<div><b><span data-l="tr">Yasal</span><span data-l="en">Legal</span></b><a href="kvkk.html"><span data-l="tr">KVKK Aydınlatma Metni</span><span data-l="en">Personal Data Notice (KVKK)</span></a><a href="privacy.html"><span data-l="tr">Gizlilik Politikası</span><span data-l="en">Privacy Policy</span></a><a href="cookies.html"><span data-l="tr">Çerez Politikası</span><span data-l="en">Cookie Policy</span></a><a href="terms.html"><span data-l="tr">Kullanım Koşulları</span><span data-l="en">Terms of Use</span></a><a href="distance-sales.html"><span data-l="tr">Mesafeli Satış ve İade</span><span data-l="en">Distance Sales and Refunds</span></a></div>
-<div><b><span data-l="tr">Hesap</span><span data-l="en">Account</span></b><a href="support.html#hesap-silme"><span data-l="tr">Hesap silme</span><span data-l="en">Delete account</span></a><a href="licenses.html"><span data-l="tr">Lisanslar</span><span data-l="en">Licences</span></a></div>
+<div><b><span data-l="tr">Explormap</span><span data-l="en">Explormap</span></b><a href="nasil-calisir"><span data-l="tr">Nasıl çalışır</span><span data-l="en">How it works</span></a><a href="blog">Blog</a><a href="destek"><span data-l="tr">Destek</span><span data-l="en">Support</span></a><a href="iletisim"><span data-l="tr">İletişim ve Başvuru</span><span data-l="en">Contact and Requests</span></a></div>
+<div><b><span data-l="tr">Yasal</span><span data-l="en">Legal</span></b><a href="kvkk"><span data-l="tr">KVKK Aydınlatma Metni</span><span data-l="en">Personal Data Notice (KVKK)</span></a><a href="gizlilik"><span data-l="tr">Gizlilik Politikası</span><span data-l="en">Privacy Policy</span></a><a href="cerez-politikasi"><span data-l="tr">Çerez Politikası</span><span data-l="en">Cookie Policy</span></a><a href="kullanim-kosullari"><span data-l="tr">Kullanım Koşulları</span><span data-l="en">Terms of Use</span></a><a href="mesafeli-satis"><span data-l="tr">Mesafeli Satış ve İade</span><span data-l="en">Distance Sales and Refunds</span></a></div>
+<div><b><span data-l="tr">Hesap</span><span data-l="en">Account</span></b><a href="destek#hesap-silme"><span data-l="tr">Hesap silme</span><span data-l="en">Delete account</span></a><a href="lisanslar"><span data-l="tr">Lisanslar</span><span data-l="en">Licences</span></a></div>
 </div>
 </div></footer>
 <script>
@@ -123,8 +134,11 @@ footer.bottom .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-b
     var t=document.querySelector('meta[name=title-'+l+']');if(t)document.title=t.content;
     var d=document.querySelector('meta[name=description]'),dl=document.querySelector('meta[name=description-'+l+']');if(d&&dl)d.content=dl.content;}
   set(lang);
-  var f=location.pathname.split('/').pop()||'index.html'; if(f.indexOf('blog')===0)f='blog.html';
-  document.querySelectorAll('nav.links a').forEach(function(a){if(a.getAttribute('href')===f)a.className+=' on'});
+  var f=(location.pathname.split('/').pop()||'').replace(/\.html$/,''); if(!f||f==='index')f='./'; if(f.indexOf('blog')===0)f='blog';
+  document.querySelectorAll('nav.links a, .mnav a').forEach(function(a){if(a.getAttribute('href')===f)a.className+=' on'});
+  var hd=document.querySelector('header.top'), mb=document.querySelector('.menu');
+  if(hd&&mb){mb.addEventListener('click',function(){var o=hd.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+    document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){hd.classList.remove('open');mb.setAttribute('aria-expanded','false')})});}
   document.querySelectorAll('.lang button').forEach(function(x){x.addEventListener('click',function(){set(x.dataset.set);try{localStorage.setItem('lang',x.dataset.set)}catch(e){}})});
 })();</script>
 </body>
